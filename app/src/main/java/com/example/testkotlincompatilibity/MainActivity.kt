@@ -56,19 +56,27 @@ class MainActivity : AppCompatActivity() {
         fun IntRange.random() =
             Random().nextInt((endInclusive) - start) + start
 
-        answer = (10..50).random()
+        //answer = (10..50).random()
 
-        val option1 = (1..answer).random()
-        val option2 = answer - option1
+        //val option1 = (1..answer).random()
+        //val option2 = answer - option1
 
-        val incorrect1 = (1..answer).random()
-        val incorrect2 = (1..answer).random()
+        val option1 = (10..50).random()
+        val option2 = (10..50).random()
+
+        answer = option1 + option2
+
+        //val incorrect1 = (1..answer).random()
+        //val incorrect2 = (1..answer).random()
+
+        val option3 = (10..answer).random()
+        val option4 = answer - option3
 
         val valueList = ArrayList<Int>();
         valueList.add(option1)
         valueList.add(option2)
-        valueList.add(incorrect1)
-        valueList.add(incorrect2)
+        valueList.add(option3)
+        valueList.add(option4)
 
         System.out.println(answer.toString() + " " + option1 + " " + option2);
 
