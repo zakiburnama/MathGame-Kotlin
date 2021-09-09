@@ -14,16 +14,16 @@ class MainActivity : AppCompatActivity() {
         var game1 = findViewById(R.id.btngame1) as Button
         var game2 = findViewById(R.id.btngame2) as Button
 
-        //
+        // Klik button game 1
         game1.setOnClickListener {
             val intent = Intent(this@MainActivity, GameActivity::class.java)
-            intent.putExtra("flag", "A")
+            intent.putExtra("flag", "A") // mengirim nilai flag ke activity 2
             startActivity(intent)
         }
-        //
+        // Klik button game 2
         game2.setOnClickListener {
             val intent = Intent(this@MainActivity, GameActivity::class.java)
-            intent.putExtra("flag", "B")
+            intent.putExtra("flag", "B") // mengirim nilai flag ke activity 2
             startActivity(intent)
         }
     }

@@ -11,7 +11,8 @@ import java.sql.DriverManager.println
 import java.util.*
 import kotlin.collections.ArrayList
 
-class GameActivity : AppCompatActivity() {
+class GameActivity : AppCompatActivity()
+{
 
     lateinit var answerTextView: TextView
     lateinit var answerTextView2: TextView
@@ -25,7 +26,8 @@ class GameActivity : AppCompatActivity() {
     var remain : Int = 0
     var isFirstButtonPressed: Boolean = false
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?)
+    {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
 
@@ -37,10 +39,7 @@ class GameActivity : AppCompatActivity() {
         btnRightBottom = findViewById(R.id.btnRightBottom)
         btnLeftBottom = findViewById(R.id.btnLeftBottom)
 
-
-
         generateQuestion()
-
     }
 
     fun generateQuestion()
@@ -52,34 +51,22 @@ class GameActivity : AppCompatActivity() {
 
         isFirstButtonPressed = false
 
-
         answerTextView.text = "Math Game"
 
-
         var Flag = intent.getStringExtra("flag")
-        //System.out.println("Sesuatu " + Flag)
-
+        System.out.println("Nilai Flag : " + Flag) //
 
         fun IntRange.random() =
             Random().nextInt((endInclusive) - start) + start
-
-        //answer = (10..50).random()
-
-        //val option1 = (1..answer).random()
-        //val option2 = answer - option1
 
         val option1 = (10..50).random()
         val option2 = (10..50).random()
 
         answer = option1 + option2
 
-        //val incorrect1 = (1..answer).random()
-        //val incorrect2 = (1..answer).random()
-
         val option3 = (10..answer).random()
-
         var option4 = 0
-
+        // percabangan untuk game 1 dan game 2
         if (Flag == "A"){
             option4 = (10..answer).random()
             answerTextView2.text = answer.toString()
@@ -88,8 +75,7 @@ class GameActivity : AppCompatActivity() {
             option4 = answer - option3
             answerTextView2.text = ""
         }
-
-        System.out.println("Opsi 4 " + option4)
+        // System.out.println("Opsi 4 " + option4)
 
         val valueList = ArrayList<Int>()
         valueList.add(option1)
@@ -97,15 +83,12 @@ class GameActivity : AppCompatActivity() {
         valueList.add(option3)
         valueList.add(option4)
 
-        System.out.println(answer.toString() + " " + option1 + " " + option2)
+        System.out.println(answer.toString() + " " + option1 + " " + option2) //
 
         var randomValue = (0..valueList.size).random()
-
-        System.out.println("Random value " + randomValue)
-
+        System.out.println("Random value " + randomValue) //
         var currentValue = valueList.removeAt(randomValue)
-        System.out.println("Current value " + currentValue)
-
+        System.out.println("Current value " + currentValue) //
         btnRightTop.text = currentValue.toString()
 
         randomValue = (0..valueList.size).random()
@@ -130,11 +113,10 @@ class GameActivity : AppCompatActivity() {
 
         remain = remain - pressedValue
 
-        System.out.println(pressedValue.toString() + " " +  remain.toString())
+        System.out.println(pressedValue.toString() + " " +  remain.toString()) //
 
         if (isFirstButtonPressed)
         {
-            // if 2 button is pressed, validate
             if (remain == 0)
             {
                 System.out.println("CORRECT!!!")
