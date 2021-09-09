@@ -14,6 +14,7 @@ import kotlin.collections.ArrayList
 class GameActivity : AppCompatActivity() {
 
     lateinit var answerTextView: TextView
+    lateinit var answerTextView2: TextView
 
     lateinit var btnRightTop: Button
     lateinit var btnLeftTop: Button
@@ -29,6 +30,7 @@ class GameActivity : AppCompatActivity() {
         setContentView(R.layout.activity_game)
 
         answerTextView = findViewById(R.id.answerTextView)
+        answerTextView2 = findViewById(R.id.answerTextView2)
 
         btnRightTop = findViewById(R.id.btnRightTop)
         btnLeftTop = findViewById(R.id.btnLeftTop)
@@ -49,6 +51,10 @@ class GameActivity : AppCompatActivity() {
         btnLeftBottom.isEnabled = true
 
         isFirstButtonPressed = false
+
+
+        answerTextView.text = "Math Game"
+
 
         var Flag = intent.getStringExtra("flag")
         //System.out.println("Sesuatu " + Flag)
@@ -76,10 +82,11 @@ class GameActivity : AppCompatActivity() {
 
         if (Flag == "A"){
             option4 = (10..answer).random()
-            answerTextView.text = answer.toString();
+            answerTextView2.text = answer.toString()
         }
         else if (Flag == "B"){
             option4 = answer - option3
+            answerTextView2.text = ""
         }
 
         System.out.println("Opsi 4 " + option4)
@@ -131,12 +138,19 @@ class GameActivity : AppCompatActivity() {
             if (remain == 0)
             {
                 System.out.println("CORRECT!!!")
+                generateQuestion()
             }
             else
             {
                 System.out.println("INCORRECT!!!")
+                answerTextView.text = "SALAH"
+                remain = answer
+                isFirstButtonPressed = false
+                btnRightTop.isEnabled = true
+                btnLeftTop.isEnabled = true
+                btnRightBottom.isEnabled = true
+                btnLeftBottom.isEnabled = true
             }
-            generateQuestion()
         }
         else
         {
