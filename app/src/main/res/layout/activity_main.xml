@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/abugelap"
     tools:context=".MainActivity">
 
     <TextView
@@ -15,6 +16,7 @@
         android:text="Math Game"
         android:textAlignment="center"
         android:textSize="50dp"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
@@ -37,8 +39,8 @@
                 android:layout_height="300dp"
                 android:layout_marginLeft="40dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
                 android:padding="20dp"
+                android:background="@drawable/btn_bg"
                 android:text="Game 1" />
 
             <Button
@@ -48,6 +50,7 @@
                 android:layout_marginLeft="40dp"
                 android:layout_marginTop="20dp"
                 android:padding="20dp"
+                android:background="@drawable/btn_bg"
                 android:text="Game 2" />
 
             <Button
@@ -58,6 +61,7 @@
                 android:layout_marginTop="20dp"
                 android:enabled="false"
                 android:padding="20dp"
+                android:background="@drawable/btn_bg"
                 android:text="Game 3" />
 
             <Button
@@ -69,6 +73,7 @@
                 android:layout_weight="1"
                 android:enabled="false"
                 android:padding="20dp"
+                android:background="@drawable/btn_bg"
                 android:text="Game 4" />
 
             <Button
@@ -80,6 +85,7 @@
                 android:layout_weight="1"
                 android:enabled="false"
                 android:padding="20dp"
+                android:background="@drawable/btn_bg"
                 android:text="Game 5" />
         </LinearLayout>
     </HorizontalScrollView>
