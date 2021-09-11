@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/abugelap"
     tools:context=".GameActivity">
 
     <LinearLayout
@@ -26,6 +27,7 @@
                 android:text="Math Game"
                 android:textAlignment="center"
                 android:textSize="50dp"
+                android:textColor="@color/white"
                 tools:ignore="MissingConstraints" />
 
             <TextView
@@ -37,31 +39,39 @@
                 android:text="Math Game"
                 android:textAlignment="center"
                 android:textSize="50dp"
+                android:textColor="@color/white"
                 tools:ignore="MissingConstraints" />
-
         </FrameLayout>
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/btn_bg"
             tools:ignore="MissingConstraints">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
                 android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/btnLeftTop"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
+                    android:layout_margin="15dp"
                     android:layout_weight="1"
                     android:onClick="buttonPressed"
                     android:paddingTop="40dp"
                     android:paddingBottom="40dp"
+                    android:background="@drawable/btn_game"
+                    android:textColor="@drawable/btn_pressed"
                     android:text="99"
                     android:textSize="34sp" />
 
@@ -69,11 +79,13 @@
                     android:id="@+id/btnRightTop"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
+                    android:layout_margin="15dp"
                     android:layout_weight="1"
                     android:onClick="buttonPressed"
                     android:paddingTop="40dp"
                     android:paddingBottom="40dp"
+                    android:background="@drawable/btn_game"
+                    android:textColor="@drawable/btn_pressed"
                     android:text="99"
                     android:textSize="34sp" />
             </LinearLayout>
@@ -81,20 +93,23 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="200dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="150dp"
                 android:layout_marginRight="10dp"
+                android:layout_marginBottom="50dp"
                 android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/btnLeftBottom"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
+                    android:layout_margin="15dp"
                     android:layout_weight="1"
                     android:onClick="buttonPressed"
                     android:paddingTop="40dp"
                     android:paddingBottom="40dp"
+                    android:background="@drawable/btn_game"
+                    android:textColor="@drawable/btn_pressed"
                     android:text="99"
                     android:textSize="34sp" />
 
@@ -102,11 +117,13 @@
                     android:id="@+id/btnRightBottom"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
+                    android:layout_margin="15dp"
                     android:layout_weight="1"
                     android:onClick="buttonPressed"
                     android:paddingTop="40dp"
                     android:paddingBottom="40dp"
+                    android:background="@drawable/btn_game"
+                    android:textColor="@drawable/btn_pressed"
                     android:text="99"
                     android:textSize="34sp" />
             </LinearLayout>
