@@ -39,9 +39,10 @@
                 android:layout_height="300dp"
                 android:layout_marginLeft="40dp"
                 android:layout_marginTop="20dp"
-                android:padding="20dp"
+                android:padding="25dp"
                 android:background="@drawable/btn_bg"
-                android:text="Game 1" />
+                android:drawableTop="@drawable/ic_blackboard"
+                android:text="c = a + b" />
 
             <Button
                 android:id="@+id/btngame2"
@@ -49,9 +50,10 @@
                 android:layout_height="300dp"
                 android:layout_marginLeft="40dp"
                 android:layout_marginTop="20dp"
-                android:padding="20dp"
+                android:padding="25dp"
                 android:background="@drawable/btn_bg"
-                android:text="Game 2" />
+                android:drawableTop="@drawable/ic_think"
+                android:text="a + b = c + d" />
 
             <Button
                 android:id="@+id/btngame3"
@@ -60,9 +62,10 @@
                 android:layout_marginLeft="40dp"
                 android:layout_marginTop="20dp"
                 android:enabled="false"
-                android:padding="20dp"
+                android:padding="25dp"
                 android:background="@drawable/btn_bg"
-                android:text="Game 3" />
+                android:drawableTop="@drawable/ic_calculating"
+                android:text="soon" />
 
             <Button
                 android:id="@+id/btngame4"
@@ -74,7 +77,8 @@
                 android:enabled="false"
                 android:padding="20dp"
                 android:background="@drawable/btn_bg"
-                android:text="Game 4" />
+                android:drawableTop="@drawable/ic_calculating"
+                android:text="soon" />
 
             <Button
                 android:id="@+id/btngame5"
@@ -86,7 +90,8 @@
                 android:enabled="false"
                 android:padding="20dp"
                 android:background="@drawable/btn_bg"
-                android:text="Game 5" />
+                android:drawableTop="@drawable/ic_calculating"
+                android:text="soon" />
         </LinearLayout>
     </HorizontalScrollView>
 

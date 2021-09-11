@@ -19,7 +19,7 @@
             tools:ignore="MissingConstraints">
 
             <TextView
-                android:id="@+id/answerTextView"
+                android:id="@+id/header"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
@@ -31,7 +31,7 @@
                 tools:ignore="MissingConstraints" />
 
             <TextView
-                android:id="@+id/answerTextView2"
+                android:id="@+id/header2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="120dp"
@@ -62,7 +62,7 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/btnLeftTop"
+                    android:id="@+id/btnA"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="15dp"
@@ -76,7 +76,7 @@
                     android:textSize="34sp" />
 
                 <Button
-                    android:id="@+id/btnRightTop"
+                    android:id="@+id/btnB"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="15dp"
@@ -100,7 +100,7 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/btnLeftBottom"
+                    android:id="@+id/btnC"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="15dp"
@@ -114,7 +114,7 @@
                     android:textSize="34sp" />
 
                 <Button
-                    android:id="@+id/btnRightBottom"
+                    android:id="@+id/btnD"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="15dp"

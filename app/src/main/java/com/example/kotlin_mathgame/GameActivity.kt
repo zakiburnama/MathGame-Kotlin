@@ -2,25 +2,22 @@ package com.example.kotlin_mathgame
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log.println
 import android.view.View
 import android.widget.Button
-import android.widget.ImageView
 import android.widget.TextView
-import java.sql.DriverManager.println
 import java.util.*
 import kotlin.collections.ArrayList
 
 class GameActivity : AppCompatActivity()
 {
 
-    lateinit var answerTextView: TextView
-    lateinit var answerTextView2: TextView
+    lateinit var header: TextView
+    lateinit var header2: TextView
 
-    lateinit var btnRightTop: Button
-    lateinit var btnLeftTop: Button
-    lateinit var btnRightBottom: Button
-    lateinit var btnLeftBottom: Button
+    lateinit var btnA: Button
+    lateinit var btnB: Button
+    lateinit var btnC: Button
+    lateinit var btnD: Button
 
     var answer : Int = 0
     var remain : Int = 0
@@ -31,27 +28,26 @@ class GameActivity : AppCompatActivity()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
 
-        answerTextView = findViewById(R.id.answerTextView)
-        answerTextView2 = findViewById(R.id.answerTextView2)
+        header = findViewById(R.id.header)
+        header2 = findViewById(R.id.header2)
 
-        btnRightTop = findViewById(R.id.btnRightTop)
-        btnLeftTop = findViewById(R.id.btnLeftTop)
-        btnRightBottom = findViewById(R.id.btnRightBottom)
-        btnLeftBottom = findViewById(R.id.btnLeftBottom)
+        btnA = findViewById(R.id.btnA)
+        btnB = findViewById(R.id.btnB)
+        btnC = findViewById(R.id.btnC)
+        btnD = findViewById(R.id.btnD)
 
         generateQuestion()
     }
 
     fun generateQuestion()
     {
-        btnRightTop.isEnabled = true
-        btnLeftTop.isEnabled = true
-        btnRightBottom.isEnabled = true
-        btnLeftBottom.isEnabled = true
+        btnA.isEnabled = true
+        btnB.isEnabled = true
+        btnC.isEnabled = true
+        btnD.isEnabled = true
 
         isFirstButtonPressed = false
 
-        answerTextView.text = "Math Game"
 
         var Flag = intent.getStringExtra("flag")
         System.out.println("Nilai Flag : " + Flag) //
@@ -69,11 +65,11 @@ class GameActivity : AppCompatActivity()
         // percabangan untuk game 1 dan game 2
         if (Flag == "A"){
             option4 = (10..answer).random()
-            answerTextView2.text = answer.toString()
+            header2.text = answer.toString()
         }
         else if (Flag == "B"){
             option4 = answer - option3
-            answerTextView2.text = ""
+            header2.text = ""
         }
         // System.out.println("Opsi 4 " + option4)
 
@@ -89,18 +85,18 @@ class GameActivity : AppCompatActivity()
         System.out.println("Random value " + randomValue) //
         var currentValue = valueList.removeAt(randomValue)
         System.out.println("Current value " + currentValue) //
-        btnRightTop.text = currentValue.toString()
+        btnA.text = currentValue.toString()
 
         randomValue = (0..valueList.size).random()
         currentValue = valueList.removeAt(randomValue)
-        btnLeftTop.text = currentValue.toString()
+        btnB.text = currentValue.toString()
 
         randomValue = (0..valueList.size).random()
         currentValue = valueList.removeAt(randomValue)
-        btnRightBottom.text = currentValue.toString()
+        btnC.text = currentValue.toString()
 
         currentValue = valueList.removeAt(0)
-        btnLeftBottom.text = currentValue.toString()
+        btnD.text = currentValue.toString()
 
         remain = answer
     }
@@ -120,18 +116,19 @@ class GameActivity : AppCompatActivity()
             if (remain == 0)
             {
                 System.out.println("CORRECT!!!")
+                header.text = "BENAR"
                 generateQuestion()
             }
             else
             {
                 System.out.println("INCORRECT!!!")
-                answerTextView.text = "SALAH"
+                header.text = "SALAH"
                 remain = answer
                 isFirstButtonPressed = false
-                btnRightTop.isEnabled = true
-                btnLeftTop.isEnabled = true
-                btnRightBottom.isEnabled = true
-                btnLeftBottom.isEnabled = true
+                btnA.isEnabled = true
+                btnB.isEnabled = true
+                btnC.isEnabled = true
+                btnD.isEnabled = true
             }
         }
         else
