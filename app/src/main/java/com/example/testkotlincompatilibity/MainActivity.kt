@@ -85,7 +85,6 @@ class MainActivity : AppCompatActivity() {
          */
 
         fadeInAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_in)
-        // System.out.println("FIA duration " +  fadeInAnimation.duration)
         fadeOutAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_out)
 
 
