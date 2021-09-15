@@ -50,7 +50,7 @@ class GameActivity : AppCompatActivity()
 
 
         var Flag = intent.getStringExtra("flag")
-        System.out.println("Nilai Flag : " + Flag) //
+        // System.out.println("Nilai Flag : " + Flag) //
 
         fun IntRange.random() =
             Random().nextInt((endInclusive) - start) + start
@@ -79,12 +79,12 @@ class GameActivity : AppCompatActivity()
         valueList.add(option3)
         valueList.add(option4)
 
-        System.out.println(answer.toString() + " " + option1 + " " + option2) //
+        // System.out.println(answer.toString() + " " + option1 + " " + option2) //
 
         var randomValue = (0..valueList.size).random()
-        System.out.println("Random value " + randomValue) //
+        // System.out.println("Random value " + randomValue) //
         var currentValue = valueList.removeAt(randomValue)
-        System.out.println("Current value " + currentValue) //
+        // System.out.println("Current value " + currentValue) //
         btnA.text = currentValue.toString()
 
         randomValue = (0..valueList.size).random()
@@ -107,21 +107,21 @@ class GameActivity : AppCompatActivity()
 
         val pressedValue = Integer.parseInt(button.text.toString())
 
-        remain = remain - pressedValue
+        remain = remain - pressedValue //
 
-        System.out.println(pressedValue.toString() + " " +  remain.toString()) //
+        // System.out.println(pressedValue.toString() + " " +  remain.toString()) //
 
         if (isFirstButtonPressed)
         {
             if (remain == 0)
             {
-                System.out.println("CORRECT!!!")
+                // System.out.println("CORRECT!!!")
                 header.text = "BENAR"
                 generateQuestion()
             }
             else
             {
-                System.out.println("INCORRECT!!!")
+                // System.out.println("INCORRECT!!!")
                 header.text = "SALAH"
                 remain = answer
                 isFirstButtonPressed = false

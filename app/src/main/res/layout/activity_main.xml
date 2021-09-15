@@ -15,8 +15,8 @@
         android:fontFamily="@font/amiko_semibold"
         android:text="Math Game"
         android:textAlignment="center"
-        android:textSize="50dp"
         android:textColor="@color/white"
+        android:textSize="50dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
@@ -24,7 +24,7 @@
     <HorizontalScrollView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="200dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView">
 
@@ -39,9 +39,9 @@
                 android:layout_height="300dp"
                 android:layout_marginLeft="40dp"
                 android:layout_marginTop="20dp"
-                android:padding="25dp"
                 android:background="@drawable/btn_bg"
                 android:drawableTop="@drawable/ic_blackboard"
+                android:padding="25dp"
                 android:text="c = a + b" />
 
             <Button
@@ -50,9 +50,9 @@
                 android:layout_height="300dp"
                 android:layout_marginLeft="40dp"
                 android:layout_marginTop="20dp"
-                android:padding="25dp"
                 android:background="@drawable/btn_bg"
                 android:drawableTop="@drawable/ic_think"
+                android:padding="25dp"
                 android:text="a + b = c + d" />
 
             <Button
@@ -61,10 +61,10 @@
                 android:layout_height="300dp"
                 android:layout_marginLeft="40dp"
                 android:layout_marginTop="20dp"
-                android:enabled="false"
-                android:padding="25dp"
                 android:background="@drawable/btn_bg"
                 android:drawableTop="@drawable/ic_calculating"
+                android:enabled="false"
+                android:padding="25dp"
                 android:text="soon" />
 
             <Button
@@ -74,10 +74,10 @@
                 android:layout_marginLeft="40dp"
                 android:layout_marginTop="20dp"
                 android:layout_weight="1"
-                android:enabled="false"
-                android:padding="20dp"
                 android:background="@drawable/btn_bg"
                 android:drawableTop="@drawable/ic_calculating"
+                android:enabled="false"
+                android:padding="20dp"
                 android:text="soon" />
 
             <Button
@@ -87,10 +87,10 @@
                 android:layout_marginLeft="40dp"
                 android:layout_marginTop="20dp"
                 android:layout_weight="1"
-                android:enabled="false"
-                android:padding="20dp"
                 android:background="@drawable/btn_bg"
                 android:drawableTop="@drawable/ic_calculating"
+                android:enabled="false"
+                android:padding="20dp"
                 android:text="soon" />
         </LinearLayout>
     </HorizontalScrollView>

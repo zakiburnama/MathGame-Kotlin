@@ -55,8 +55,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
                 android:layout_marginLeft="10dp"
+                android:layout_marginTop="50dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
                 android:orientation="horizontal">
@@ -67,12 +67,12 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="15dp"
                     android:layout_weight="1"
+                    android:background="@drawable/btn_game"
                     android:onClick="buttonPressed"
                     android:paddingTop="40dp"
                     android:paddingBottom="40dp"
-                    android:background="@drawable/btn_game"
-                    android:textColor="@drawable/btn_pressed"
                     android:text="99"
+                    android:textColor="@drawable/btn_pressed"
                     android:textSize="34sp" />
 
                 <Button
@@ -81,20 +81,20 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="15dp"
                     android:layout_weight="1"
+                    android:background="@drawable/btn_game"
                     android:onClick="buttonPressed"
                     android:paddingTop="40dp"
                     android:paddingBottom="40dp"
-                    android:background="@drawable/btn_game"
-                    android:textColor="@drawable/btn_pressed"
                     android:text="99"
+                    android:textColor="@drawable/btn_pressed"
                     android:textSize="34sp" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="200dp"
                 android:layout_marginLeft="10dp"
+                android:layout_marginTop="200dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="50dp"
                 android:orientation="horizontal">
@@ -105,12 +105,12 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="15dp"
                     android:layout_weight="1"
+                    android:background="@drawable/btn_game"
                     android:onClick="buttonPressed"
                     android:paddingTop="40dp"
                     android:paddingBottom="40dp"
-                    android:background="@drawable/btn_game"
-                    android:textColor="@drawable/btn_pressed"
                     android:text="99"
+                    android:textColor="@drawable/btn_pressed"
                     android:textSize="34sp" />
 
                 <Button
@@ -119,12 +119,12 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="15dp"
                     android:layout_weight="1"
+                    android:background="@drawable/btn_game"
                     android:onClick="buttonPressed"
                     android:paddingTop="40dp"
                     android:paddingBottom="40dp"
-                    android:background="@drawable/btn_game"
-                    android:textColor="@drawable/btn_pressed"
                     android:text="99"
+                    android:textColor="@drawable/btn_pressed"
                     android:textSize="34sp" />
             </LinearLayout>
         </FrameLayout>
