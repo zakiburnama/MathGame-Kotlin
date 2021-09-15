@@ -8,6 +8,7 @@
     tools:context=".GameActivity">
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -26,8 +27,8 @@
                 android:fontFamily="@font/amiko_semibold"
                 android:text="Math Game"
                 android:textAlignment="center"
-                android:textSize="50dp"
                 android:textColor="@color/white"
+                android:textSize="50dp"
                 tools:ignore="MissingConstraints" />
 
             <TextView
@@ -38,8 +39,8 @@
                 android:fontFamily="@font/amiko_semibold"
                 android:text="Math Game"
                 android:textAlignment="center"
-                android:textSize="50dp"
                 android:textColor="@color/white"
+                android:textSize="50dp"
                 tools:ignore="MissingConstraints" />
         </FrameLayout>
 
@@ -129,5 +130,16 @@
             </LinearLayout>
         </FrameLayout>
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="400dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_think" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

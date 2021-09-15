@@ -3,13 +3,17 @@ package com.example.kotlin_mathgame
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import java.util.*
 import kotlin.collections.ArrayList
 
 class GameActivity : AppCompatActivity()
 {
+    lateinit var imageView: ImageView
 
     lateinit var header: TextView
     lateinit var header2: TextView
@@ -23,10 +27,15 @@ class GameActivity : AppCompatActivity()
     var remain : Int = 0
     var isFirstButtonPressed: Boolean = false
 
+    lateinit var fadeZoomIn : Animation
+    lateinit var fadeZoomOut : Animation
+
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
+
+        imageView = findViewById(R.id.imageView)
 
         header = findViewById(R.id.header)
         header2 = findViewById(R.id.header2)
@@ -37,6 +46,12 @@ class GameActivity : AppCompatActivity()
         btnD = findViewById(R.id.btnD)
 
         generateQuestion()
+
+        fadeZoomIn = AnimationUtils.loadAnimation(this, R.anim.fade_zoom_in)
+        fadeZoomOut = AnimationUtils.loadAnimation(this, R.anim.fade_zoom_out)
+
+        imageView.setImageResource(R.drawable.ic_think)
+        imageView.startAnimation(fadeZoomIn)
     }
 
     fun generateQuestion()
