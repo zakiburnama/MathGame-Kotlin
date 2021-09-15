@@ -1,12 +1,17 @@
 package com.example.testkotlincompatilibity
 
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log.println
 import android.view.View
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.view.isVisible
 import java.sql.DriverManager.println
 import java.util.*
 
@@ -27,6 +32,11 @@ class MainActivity : AppCompatActivity() {
 
     var isFirstButtonPressed: Boolean = false;
 
+    lateinit var animatorSet: AnimatorSet
+
+    lateinit var fadeInAnimation : Animation
+    lateinit var fadeOutAnimation : Animation
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -41,6 +51,44 @@ class MainActivity : AppCompatActivity() {
         rightBotButton = findViewById(R.id.rightBotButton)
 
         generateQuestion()
+
+        /*
+
+        resultImageView.alpha = 0.0f
+        resultImageView.scaleX = 0.75f
+        resultImageView.scaleY = 0.75f
+
+        val resultFadeIn = ObjectAnimator.ofFloat(resultImageView, "alpha", 1.0f).apply()
+        {
+            duration = 1000
+        }
+        val resultFadeOut = ObjectAnimator.ofFloat(resultImageView, "alpha", 0.0f).apply()
+        {
+            duration = 2000
+        }
+
+        val resultZoomInX = ObjectAnimator.ofFloat(resultImageView, "scaleX", 1.0f).apply()
+        {
+            duration = 100
+        }
+        val resultZoomInY = ObjectAnimator.ofFloat(resultImageView, "scaleY", 1.0f).apply()
+        {
+            duration = 100
+        }
+
+        animatorSet = AnimatorSet().apply() {
+            play(resultFadeIn).before(resultFadeOut)
+            play(resultFadeIn).with(resultZoomInX)
+            play(resultFadeIn).with(resultZoomInY)
+        }
+
+         */
+
+        fadeInAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_in)
+        // System.out.println("FIA duration " +  fadeInAnimation.duration)
+        fadeOutAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_out)
+
+
     }
 
     fun generateQuestion()
@@ -56,27 +104,19 @@ class MainActivity : AppCompatActivity() {
         fun IntRange.random() =
             Random().nextInt((endInclusive) - start) + start
 
-        //answer = (10..50).random()
+        answer = (10..50).random()
 
-        //val option1 = (1..answer).random()
-        //val option2 = answer - option1
+        val option1 = (1..answer).random()
+        val option2 = answer - option1
 
-        val option1 = (10..50).random()
-        val option2 = (10..50).random()
-
-        answer = option1 + option2
-
-        //val incorrect1 = (1..answer).random()
-        //val incorrect2 = (1..answer).random()
-
-        val option3 = (10..answer).random()
-        val option4 = answer - option3
+        val incorrect1 = (1..answer).random()
+        val incorrect2 = (1..answer).random()
 
         val valueList = ArrayList<Int>();
         valueList.add(option1)
         valueList.add(option2)
-        valueList.add(option3)
-        valueList.add(option4)
+        valueList.add(incorrect1)
+        valueList.add(incorrect2)
 
         System.out.println(answer.toString() + " " + option1 + " " + option2);
 
@@ -103,7 +143,6 @@ class MainActivity : AppCompatActivity() {
         answerTextView.text = answer.toString();
 
         remain = answer
-
     }
 
     fun buttonPressed(v: View)
@@ -122,10 +161,22 @@ class MainActivity : AppCompatActivity() {
             if (remain == 0)
             {
                 System.out.println("CORRECT!!!")
+
+                resultImageView.setImageResource(R.drawable.icon_true)
+                //animatorSet.start()
+                resultImageView.startAnimation(fadeInAnimation)
+
+
+
             }
             else
             {
                 System.out.println("INCORRECT!!!")
+
+                //val fadeInAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_in)
+                resultImageView.setImageResource(R.drawable.icon_false)
+                //animatorSet.start()
+                resultImageView.startAnimation(fadeInAnimation)
             }
             generateQuestion()
         }
