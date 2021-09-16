@@ -6,6 +6,7 @@ import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.Button
+import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.TextView
 import java.util.*
@@ -17,6 +18,8 @@ class GameActivity : AppCompatActivity()
 
     lateinit var header: TextView
     lateinit var header2: TextView
+
+    lateinit var frameBtn : FrameLayout
 
     lateinit var btnA: Button
     lateinit var btnB: Button
@@ -40,6 +43,8 @@ class GameActivity : AppCompatActivity()
         header = findViewById(R.id.header)
         header2 = findViewById(R.id.header2)
 
+        frameBtn = findViewById(R.id.frameBtn)
+
         btnA = findViewById(R.id.btnA)
         btnB = findViewById(R.id.btnB)
         btnC = findViewById(R.id.btnC)
@@ -51,11 +56,13 @@ class GameActivity : AppCompatActivity()
         fadeZoomOut = AnimationUtils.loadAnimation(this, R.anim.fade_zoom_out)
 
         imageView.setImageResource(R.drawable.ic_think)
-        imageView.startAnimation(fadeZoomIn)
+        imageView.startAnimation(fadeZoomOut)
+        frameBtn.startAnimation(fadeZoomIn)
     }
 
     fun generateQuestion()
     {
+        // Button enable
         btnA.isEnabled = true
         btnB.isEnabled = true
         btnC.isEnabled = true
@@ -65,7 +72,6 @@ class GameActivity : AppCompatActivity()
 
 
         var Flag = intent.getStringExtra("flag")
-        // System.out.println("Nilai Flag : " + Flag) //
 
         fun IntRange.random() =
             Random().nextInt((endInclusive) - start) + start
@@ -86,7 +92,6 @@ class GameActivity : AppCompatActivity()
             option4 = answer - option3
             header2.text = ""
         }
-        // System.out.println("Opsi 4 " + option4)
 
         val valueList = ArrayList<Int>()
         valueList.add(option1)
@@ -94,12 +99,8 @@ class GameActivity : AppCompatActivity()
         valueList.add(option3)
         valueList.add(option4)
 
-        // System.out.println(answer.toString() + " " + option1 + " " + option2) //
-
         var randomValue = (0..valueList.size).random()
-        // System.out.println("Random value " + randomValue) //
         var currentValue = valueList.removeAt(randomValue)
-        // System.out.println("Current value " + currentValue) //
         btnA.text = currentValue.toString()
 
         randomValue = (0..valueList.size).random()
@@ -122,21 +123,23 @@ class GameActivity : AppCompatActivity()
 
         val pressedValue = Integer.parseInt(button.text.toString())
 
-        remain = remain - pressedValue //
-
-        // System.out.println(pressedValue.toString() + " " +  remain.toString()) //
+        remain = remain - pressedValue
 
         if (isFirstButtonPressed)
         {
             if (remain == 0)
             {
-                // System.out.println("CORRECT!!!")
                 header.text = "BENAR"
+
+                imageView.setImageResource(R.drawable.ic_blackboard)
+                imageView.startAnimation(fadeZoomOut)
+
+                frameBtn.startAnimation(fadeZoomIn)
+
                 generateQuestion()
             }
             else
             {
-                // System.out.println("INCORRECT!!!")
                 header.text = "SALAH"
                 remain = answer
                 isFirstButtonPressed = false
@@ -144,6 +147,9 @@ class GameActivity : AppCompatActivity()
                 btnB.isEnabled = true
                 btnC.isEnabled = true
                 btnD.isEnabled = true
+
+                imageView.setImageResource(R.drawable.ic_calculating)
+                imageView.startAnimation(fadeZoomOut)
             }
         }
         else
