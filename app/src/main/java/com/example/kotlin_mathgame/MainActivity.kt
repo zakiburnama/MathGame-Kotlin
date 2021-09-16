@@ -25,8 +25,10 @@ class MainActivity : AppCompatActivity() {
         fadeZoomIn = AnimationUtils.loadAnimation(this, R.anim.fade_zoom_in)
         fadeZoomOut = AnimationUtils.loadAnimation(this, R.anim.fade_zoom_out)
 
-        imgBtnGame1.startAnimation(fadeZoomIn)
+        // Animation
         game1.startAnimation(fadeZoomIn)
+        game2.startAnimation(fadeZoomIn)
+        imgBtnGame1.startAnimation(fadeZoomIn)
 
         // Klik button img game 1
         imgBtnGame1.setOnClickListener {
@@ -46,5 +48,6 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("flag", "B") // mengirim nilai flag ke activity 2
             startActivity(intent)
         }
+
     }
 }

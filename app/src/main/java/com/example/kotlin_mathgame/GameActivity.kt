@@ -131,10 +131,16 @@ class GameActivity : AppCompatActivity()
             {
                 header.text = "BENAR"
 
-                imageView.setImageResource(R.drawable.ic_blackboard)
+                imageView.setImageResource(R.drawable.ic_check)
                 imageView.startAnimation(fadeZoomOut)
 
                 frameBtn.startAnimation(fadeZoomIn)
+
+                // Button Animation
+                btnA.startAnimation(fadeZoomIn)
+                btnB.startAnimation(fadeZoomIn)
+                btnC.startAnimation(fadeZoomIn)
+                btnD.startAnimation(fadeZoomIn)
 
                 generateQuestion()
             }
@@ -148,14 +154,14 @@ class GameActivity : AppCompatActivity()
                 btnC.isEnabled = true
                 btnD.isEnabled = true
 
+                imageView.setImageResource(R.drawable.ic_delete)
+                imageView.startAnimation(fadeZoomOut)
+
                 // Button Animation
                 btnA.startAnimation(fadeZoomIn)
                 btnB.startAnimation(fadeZoomIn)
                 btnC.startAnimation(fadeZoomIn)
                 btnD.startAnimation(fadeZoomIn)
-
-                imageView.setImageResource(R.drawable.ic_calculating)
-                imageView.startAnimation(fadeZoomOut)
             }
         }
         else
