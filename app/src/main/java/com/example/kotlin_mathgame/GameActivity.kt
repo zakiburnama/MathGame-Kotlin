@@ -32,6 +32,8 @@ class GameActivity : AppCompatActivity()
 
     lateinit var fadeZoomIn : Animation
     lateinit var fadeZoomOut : Animation
+    lateinit var fadeZoomInLong : Animation
+    lateinit var fadeDown : Animation
 
     override fun onCreate(savedInstanceState: Bundle?)
     {
@@ -54,10 +56,19 @@ class GameActivity : AppCompatActivity()
 
         fadeZoomIn = AnimationUtils.loadAnimation(this, R.anim.fade_zoom_in)
         fadeZoomOut = AnimationUtils.loadAnimation(this, R.anim.fade_zoom_out)
+        fadeZoomInLong = AnimationUtils.loadAnimation(this, R.anim.fade_zoom_in_long)
+        fadeDown = AnimationUtils.loadAnimation(this, R.anim.fade_down)
 
-        imageView.setImageResource(R.drawable.ic_think)
+        imageView.setImageResource(R.drawable.ic_none)
         imageView.startAnimation(fadeZoomOut)
         frameBtn.startAnimation(fadeZoomIn)
+        header.startAnimation(fadeDown)
+        header2.startAnimation(fadeDown)
+
+        btnA.startAnimation(fadeZoomInLong)
+        btnB.startAnimation(fadeZoomInLong)
+        btnC.startAnimation(fadeZoomInLong)
+        btnD.startAnimation(fadeZoomInLong)
     }
 
     fun generateQuestion()
@@ -129,12 +140,12 @@ class GameActivity : AppCompatActivity()
         {
             if (remain == 0)
             {
-                header.text = "BENAR"
+                // header.text = "BENAR"
 
                 imageView.setImageResource(R.drawable.ic_check)
                 imageView.startAnimation(fadeZoomOut)
 
-                frameBtn.startAnimation(fadeZoomIn)
+                frameBtn.startAnimation(fadeZoomInLong)
 
                 // Button Animation
                 btnA.startAnimation(fadeZoomIn)
@@ -146,7 +157,7 @@ class GameActivity : AppCompatActivity()
             }
             else
             {
-                header.text = "SALAH"
+                // header.text = "SALAH"
                 remain = answer
                 isFirstButtonPressed = false
                 btnA.isEnabled = true

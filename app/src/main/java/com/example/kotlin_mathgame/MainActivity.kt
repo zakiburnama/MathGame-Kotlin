@@ -8,11 +8,12 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var fadeZoomIn : Animation
-    lateinit var fadeZoomOut : Animation
+    lateinit var fadeZoomInLong : Animation
+    lateinit var fadeDown : Animation
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,14 +22,16 @@ class MainActivity : AppCompatActivity() {
         var game1 = findViewById(R.id.btngame1) as Button
         var game2 = findViewById(R.id.btngame2) as Button
         var imgBtnGame1 = findViewById(R.id.imgBtnGame1) as ImageButton
+        var textView = findViewById(R.id.textView) as TextView
 
-        fadeZoomIn = AnimationUtils.loadAnimation(this, R.anim.fade_zoom_in)
-        fadeZoomOut = AnimationUtils.loadAnimation(this, R.anim.fade_zoom_out)
+        fadeZoomInLong = AnimationUtils.loadAnimation(this, R.anim.fade_zoom_in_long)
+        fadeDown = AnimationUtils.loadAnimation(this, R.anim.fade_down)
 
         // Animation
-        game1.startAnimation(fadeZoomIn)
-        game2.startAnimation(fadeZoomIn)
-        imgBtnGame1.startAnimation(fadeZoomIn)
+        textView.startAnimation(fadeDown)
+        game1.startAnimation(fadeZoomInLong)
+        game2.startAnimation(fadeZoomInLong)
+        imgBtnGame1.startAnimation(fadeZoomInLong)
 
         // Klik button img game 1
         imgBtnGame1.setOnClickListener {
