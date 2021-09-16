@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var fadeInAnimation : Animation
     lateinit var fadeOutAnimation : Animation
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -51,6 +52,8 @@ class MainActivity : AppCompatActivity() {
         rightBotButton = findViewById(R.id.rightBotButton)
 
         generateQuestion()
+
+
 
         /*
 
@@ -87,6 +90,10 @@ class MainActivity : AppCompatActivity() {
         fadeInAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_in)
         fadeOutAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_out)
 
+        //
+
+        resultImageView.setImageResource(R.drawable.icon_false)
+        resultImageView.startAnimation(fadeInAnimation)
 
     }
 
@@ -175,7 +182,7 @@ class MainActivity : AppCompatActivity() {
                 //val fadeInAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_in)
                 resultImageView.setImageResource(R.drawable.icon_false)
                 //animatorSet.start()
-                resultImageView.startAnimation(fadeInAnimation)
+                resultImageView.startAnimation(fadeOutAnimation)
             }
             generateQuestion()
         }
