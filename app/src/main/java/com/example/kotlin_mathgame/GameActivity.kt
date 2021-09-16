@@ -148,6 +148,12 @@ class GameActivity : AppCompatActivity()
                 btnC.isEnabled = true
                 btnD.isEnabled = true
 
+                // Button Animation
+                btnA.startAnimation(fadeZoomIn)
+                btnB.startAnimation(fadeZoomIn)
+                btnC.startAnimation(fadeZoomIn)
+                btnD.startAnimation(fadeZoomIn)
+
                 imageView.setImageResource(R.drawable.ic_calculating)
                 imageView.startAnimation(fadeZoomOut)
             }
@@ -156,6 +162,7 @@ class GameActivity : AppCompatActivity()
         {
             isFirstButtonPressed = true
             v.isEnabled = false
+            v.startAnimation(fadeZoomOut)
         }
     }
 
