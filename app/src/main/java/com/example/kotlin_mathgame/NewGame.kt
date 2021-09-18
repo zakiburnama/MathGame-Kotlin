@@ -206,21 +206,21 @@ class NewGame : AppCompatActivity()
                         btnOpsiB.startAnimation(fadeZoomOutLong)
                     }else{
                         btnOpsiB.setCompoundDrawablesWithIntrinsicBounds(null, drawablefalse, null, null)
-                        btnOpsiA.startAnimation(fadeZoomOutShort)
+                        btnOpsiB.startAnimation(fadeZoomOutShort)
                     }
                     if (nilaiC == answer){
                         btnOpsiC.setCompoundDrawablesWithIntrinsicBounds(null, drawabletrue, null, null)
                         btnOpsiC.startAnimation(fadeZoomOutLong)
                     }else{
                         btnOpsiC.setCompoundDrawablesWithIntrinsicBounds(null, drawablefalse, null, null)
-                        btnOpsiA.startAnimation(fadeZoomOutShort)
+                        btnOpsiC.startAnimation(fadeZoomOutShort)
                     }
                     if (nilaiD == answer){
                         btnOpsiD.setCompoundDrawablesWithIntrinsicBounds(null, drawabletrue, null, null)
                         btnOpsiD.startAnimation(fadeZoomOutLong)
                     }else{
                         btnOpsiD.setCompoundDrawablesWithIntrinsicBounds(null, drawablefalse, null, null)
-                        btnOpsiA.startAnimation(fadeZoomOutShort)
+                        btnOpsiD.startAnimation(fadeZoomOutShort)
                     }
                     v.setCompoundDrawablesWithIntrinsicBounds(null, drawabletrue, null, null)
                     v.startAnimation(fadeZoomOutLong)
@@ -246,7 +246,6 @@ class NewGame : AppCompatActivity()
                     btnOpsiD.startAnimation(fadeZoomIn)
 
                 }
-
             }
         }
         else
