@@ -25,8 +25,9 @@ class NewGame : AppCompatActivity()
     lateinit var btnOpsiD: Button
 
     lateinit var fadeZoomIn : Animation
-    lateinit var fadeZoomOut : Animation
     lateinit var fadeZoomInLong : Animation
+    lateinit var fadeZoomOut : Animation
+    lateinit var fadeZoomOutLong : Animation
     lateinit var fadeDown : Animation
 
     var answer : Int = 0
@@ -48,8 +49,9 @@ class NewGame : AppCompatActivity()
         btnOpsiD = findViewById(R.id.btnOpsiD)
 
         fadeZoomIn = AnimationUtils.loadAnimation(this, R.anim.fade_zoom_in)
-        fadeZoomOut = AnimationUtils.loadAnimation(this, R.anim.fade_zoom_out)
         fadeZoomInLong = AnimationUtils.loadAnimation(this, R.anim.fade_zoom_in_long)
+        fadeZoomOut = AnimationUtils.loadAnimation(this, R.anim.fade_zoom_out)
+        fadeZoomOutLong = AnimationUtils.loadAnimation(this, R.anim.fade_zoom_out_long)
         fadeDown = AnimationUtils.loadAnimation(this, R.anim.fade_down)
 
         // Animation
@@ -77,6 +79,13 @@ class NewGame : AppCompatActivity()
 
         isFirstButtonPressed = false
 
+        // Btn icon
+        val drawable = ContextCompat.getDrawable(this@NewGame, R.drawable.ic_avatar)
+        btnOpsiA.setCompoundDrawablesWithIntrinsicBounds(null, drawable, null, null)
+        btnOpsiB.setCompoundDrawablesWithIntrinsicBounds(null, drawable, null, null)
+        btnOpsiC.setCompoundDrawablesWithIntrinsicBounds(null, drawable, null, null)
+        btnOpsiD.setCompoundDrawablesWithIntrinsicBounds(null, drawable, null, null)
+
         var Flag = intent.getStringExtra("flag")
 
         fun IntRange.random() =
@@ -96,7 +105,7 @@ class NewGame : AppCompatActivity()
         }
         else if (Flag == "B"){
             option4 = answer - option3
-            judul.text = ""
+            // judul.text = ""
         }
 
         val valueList = ArrayList<Int>()
@@ -129,8 +138,11 @@ class NewGame : AppCompatActivity()
 
         val pressedValue = Integer.parseInt(button.text.toString())
 
+        var temp : Int = 3
+
         // change button img
-        val drawable = ContextCompat.getDrawable(this@NewGame, R.drawable.ic_delete)
+        val drawable = ContextCompat.getDrawable(this@NewGame, R.drawable.ic_avatar)
+        val drawable2 = ContextCompat.getDrawable(this@NewGame, R.drawable.ic_idea)
 
         remain = remain - pressedValue
 
@@ -141,13 +153,13 @@ class NewGame : AppCompatActivity()
                 betulSalahView.setImageResource(R.drawable.ic_check)
                 betulSalahView.startAnimation(fadeZoomOut)
 
-                frameBawah.startAnimation(fadeZoomInLong)
+                // frameBawah.startAnimation(fadeZoomInLong)
 
                 // Button Animation
-                btnOpsiA.startAnimation(fadeZoomIn)
-                btnOpsiB.startAnimation(fadeZoomIn)
-                btnOpsiC.startAnimation(fadeZoomIn)
-                btnOpsiD.startAnimation(fadeZoomIn)
+                btnOpsiA.startAnimation(fadeZoomOutLong)
+                btnOpsiB.startAnimation(fadeZoomOutLong)
+                btnOpsiC.startAnimation(fadeZoomOutLong)
+                btnOpsiD.startAnimation(fadeZoomOutLong)
 
                 generateQuestion()
             }
@@ -163,6 +175,20 @@ class NewGame : AppCompatActivity()
                 betulSalahView.setImageResource(R.drawable.ic_delete)
                 betulSalahView.startAnimation(fadeZoomOut)
 
+                temp -= 1
+                if (temp == 0){
+                    btnOpsiA.setCompoundDrawablesWithIntrinsicBounds(null, drawable2, null, null)
+                    btnOpsiA.startAnimation(fadeZoomIn)
+                    //generateQuestion()
+                }
+                else{
+                    // Change icon back
+                    btnOpsiA.setCompoundDrawablesWithIntrinsicBounds(null, drawable, null, null)
+                    btnOpsiB.setCompoundDrawablesWithIntrinsicBounds(null, drawable, null, null)
+                    btnOpsiC.setCompoundDrawablesWithIntrinsicBounds(null, drawable, null, null)
+                    btnOpsiD.setCompoundDrawablesWithIntrinsicBounds(null, drawable, null, null)
+                }
+
                 // Button Animation
                 btnOpsiA.startAnimation(fadeZoomIn)
                 btnOpsiB.startAnimation(fadeZoomIn)
@@ -174,7 +200,7 @@ class NewGame : AppCompatActivity()
         {
             isFirstButtonPressed = true
             v.isEnabled = false
-            v.setCompoundDrawablesWithIntrinsicBounds(null, drawable, null, null)
+            v.setCompoundDrawablesWithIntrinsicBounds(null, drawable2, null, null)
             // v.startAnimation(fadeZoomOut)
         }
     }

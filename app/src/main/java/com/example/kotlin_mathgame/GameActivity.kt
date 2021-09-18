@@ -31,8 +31,9 @@ class GameActivity : AppCompatActivity()
     var isFirstButtonPressed: Boolean = false
 
     lateinit var fadeZoomIn : Animation
-    lateinit var fadeZoomOut : Animation
     lateinit var fadeZoomInLong : Animation
+    lateinit var fadeZoomOut : Animation
+    lateinit var fadeZoomOutLong : Animation
     lateinit var fadeDown : Animation
 
     override fun onCreate(savedInstanceState: Bundle?)

@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         // Klik button img game 1
         imgBtnGame1.setOnClickListener {
             val intent = Intent(this@MainActivity, NewGame::class.java)
-            intent.putExtra("flag", "A") // mengirim nilai flag ke activity 3
+            intent.putExtra("flag", "B") // mengirim nilai flag ke activity 3
             startActivity(intent)
         }
         // Klik button game 1
