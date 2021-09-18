@@ -42,17 +42,15 @@ class GameActivity : AppCompatActivity()
 
         imageView = findViewById(R.id.imageView)
 
-        header = findViewById(R.id.header)
+        header = findViewById(R.id.judul)
         header2 = findViewById(R.id.header2)
 
-        frameBtn = findViewById(R.id.frameBtn)
+        frameBtn = findViewById(R.id.frameBawah)
 
-        btnA = findViewById(R.id.btnA)
-        btnB = findViewById(R.id.btnB)
-        btnC = findViewById(R.id.btnC)
-        btnD = findViewById(R.id.btnD)
-
-        generateQuestion()
+        btnA = findViewById(R.id.btnOpsiA)
+        btnB = findViewById(R.id.btnOpsiB)
+        btnC = findViewById(R.id.btnOpsiC)
+        btnD = findViewById(R.id.btnOpsiD)
 
         fadeZoomIn = AnimationUtils.loadAnimation(this, R.anim.fade_zoom_in)
         fadeZoomOut = AnimationUtils.loadAnimation(this, R.anim.fade_zoom_out)
@@ -69,6 +67,9 @@ class GameActivity : AppCompatActivity()
         btnB.startAnimation(fadeZoomInLong)
         btnC.startAnimation(fadeZoomInLong)
         btnD.startAnimation(fadeZoomInLong)
+
+        generateQuestion()
+
     }
 
     fun generateQuestion()

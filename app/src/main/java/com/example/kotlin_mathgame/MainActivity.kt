@@ -1,6 +1,7 @@
 package com.example.kotlin_mathgame
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -9,6 +10,7 @@ import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 
 class MainActivity : AppCompatActivity() {
 
@@ -35,8 +37,8 @@ class MainActivity : AppCompatActivity() {
 
         // Klik button img game 1
         imgBtnGame1.setOnClickListener {
-            val intent = Intent(this@MainActivity, GameActivity::class.java)
-            intent.putExtra("flag", "A") // mengirim nilai flag ke activity 2
+            val intent = Intent(this@MainActivity, NewGame::class.java)
+            intent.putExtra("flag", "A") // mengirim nilai flag ke activity 3
             startActivity(intent)
         }
         // Klik button game 1

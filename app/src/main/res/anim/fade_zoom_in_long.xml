@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <set xmlns:android="http://schemas.android.com/apk/res/android"
-    android:duration="700"
+    android:duration="600"
     android:startOffset="300"
     android:fillAfter="false"
     android:interpolator="@android:anim/linear_interpolator">

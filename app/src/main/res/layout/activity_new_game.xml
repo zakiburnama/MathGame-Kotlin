@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/abugelap"
-    tools:context=".GameActivity">
+    tools:context=".NewGame">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -31,27 +31,13 @@
                 android:textColor="@color/white"
                 android:textSize="50dp"
                 tools:ignore="MissingConstraints" />
-
-            <TextView
-                android:id="@+id/header2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="120dp"
-                android:fontFamily="@font/amiko_semibold"
-                android:text="Math Game"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="50dp"
-                tools:ignore="MissingConstraints" />
         </FrameLayout>
 
         <FrameLayout
             android:id="@+id/frameBawah"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginRight="30dp"
+            android:layout_margin="30dp"
             android:background="@drawable/btn_bg"
             tools:ignore="MissingConstraints">
 
@@ -71,9 +57,10 @@
                     android:layout_margin="15dp"
                     android:layout_weight="1"
                     android:background="@drawable/btn_game"
+                    android:drawableTop="@drawable/ic_check"
                     android:onClick="buttonPressed"
-                    android:paddingTop="40dp"
-                    android:paddingBottom="40dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
                     android:text="99"
                     android:textColor="@drawable/btn_pressed"
                     android:textSize="34sp" />
@@ -85,9 +72,10 @@
                     android:layout_margin="15dp"
                     android:layout_weight="1"
                     android:background="@drawable/btn_game"
+                    android:drawableTop="@drawable/ic_check"
                     android:onClick="buttonPressed"
-                    android:paddingTop="40dp"
-                    android:paddingBottom="40dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
                     android:text="99"
                     android:textColor="@drawable/btn_pressed"
                     android:textSize="34sp" />
@@ -97,7 +85,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="200dp"
+                android:layout_marginTop="250dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="50dp"
                 android:orientation="horizontal">
@@ -109,9 +97,10 @@
                     android:layout_margin="15dp"
                     android:layout_weight="1"
                     android:background="@drawable/btn_game"
+                    android:drawableTop="@drawable/ic_check"
                     android:onClick="buttonPressed"
-                    android:paddingTop="40dp"
-                    android:paddingBottom="40dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
                     android:text="99"
                     android:textColor="@drawable/btn_pressed"
                     android:textSize="34sp" />
@@ -123,9 +112,10 @@
                     android:layout_margin="15dp"
                     android:layout_weight="1"
                     android:background="@drawable/btn_game"
+                    android:drawableTop="@drawable/ic_check"
                     android:onClick="buttonPressed"
-                    android:paddingTop="40dp"
-                    android:paddingBottom="40dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
                     android:text="99"
                     android:textColor="@drawable/btn_pressed"
                     android:textSize="34sp" />
@@ -134,14 +124,13 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/betulSalahView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="420dp"
-        android:layout_marginTop="180dp"
+        android:layout_marginStart="410dp"
+        android:layout_marginTop="160dp"
         app:layout_constraintEnd_toStartOf="@+id/linearLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_check" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
