@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <set xmlns:android="http://schemas.android.com/apk/res/android"
-    android:duration="600"
-    android:startOffset="400"
-    android:fillAfter="false"
-    android:fillBefore="true"
+    android:duration="150"
+    android:startOffset="0"
+    android:fillAfter="true"
+    android:fillBefore="false"
     android:interpolator="@android:anim/accelerate_interpolator">
     <!-- fade -->
     <alpha
         android:fromAlpha="1.0"
-        android:toAlpha="0.8" />
+        android:toAlpha="0.85" />
     <!-- zoom -->
     <scale
-        android:fromXScale="1.15"
-        android:fromYScale="1.15"
+        android:fromXScale="1"
+        android:fromYScale="1"
         android:pivotX="50%"
         android:pivotY="50%"
-        android:toXScale="1"
-        android:toYScale="1" />
+        android:toXScale="0.85"
+        android:toYScale="0.85" />
 </set>
