@@ -62,7 +62,7 @@ class NewGame : AppCompatActivity()
         betulSalahView.setImageResource(R.drawable.ic_none)
         betulSalahView.startAnimation(fadeZoomOut)
         judul.startAnimation(fadeDown)
-        frameBawah.startAnimation(fadeZoomIn)
+        frameBawah.startAnimation(fadeZoomInLong)
 
         generateQuestion()
     }
