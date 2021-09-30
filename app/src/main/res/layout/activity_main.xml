@@ -52,18 +52,9 @@
                 android:layout_marginTop="20dp"
                 android:background="@drawable/btn_bg"
                 android:drawableTop="@drawable/ic_think"
+                android:enabled="true"
                 android:padding="25dp"
                 android:text="a + b = c + d" />
-
-            <ImageButton
-                android:id="@+id/imgBtnGame1"
-                android:layout_width="200dp"
-                android:layout_height="300dp"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/btn_bg"
-                android:padding="25dp"
-                app:srcCompat="@drawable/ic_blackboard" />
 
             <Button
                 android:id="@+id/btngame3"
@@ -73,9 +64,20 @@
                 android:layout_marginTop="20dp"
                 android:background="@drawable/btn_bg"
                 android:drawableTop="@drawable/ic_calculating"
-                android:enabled="false"
+                android:enabled="true"
                 android:padding="25dp"
-                android:text="soon" />
+                android:text="New" />
+
+            <ImageButton
+                android:id="@+id/imgBtnGame1"
+                android:layout_width="200dp"
+                android:layout_height="300dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_bg"
+                android:enabled="true"
+                android:padding="25dp"
+                app:srcCompat="@drawable/ic_blackboard" />
 
             <Button
                 android:id="@+id/btngame4"

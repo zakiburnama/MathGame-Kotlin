@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
 
         var game1 = findViewById(R.id.btngame1) as Button
         var game2 = findViewById(R.id.btngame2) as Button
+        var game3 = findViewById(R.id.btngame3) as Button
         var imgBtnGame1 = findViewById(R.id.imgBtnGame1) as ImageButton
         var textView = findViewById(R.id.textView) as TextView
 
@@ -33,9 +34,10 @@ class MainActivity : AppCompatActivity() {
         textView.startAnimation(fadeDown)
         game1.startAnimation(fadeZoomInLong)
         game2.startAnimation(fadeZoomInLong)
+        game3.startAnimation(fadeZoomInLong)
         imgBtnGame1.startAnimation(fadeZoomInLong)
 
-        // Klik button img game 1
+        // Klik button img game 3
         imgBtnGame1.setOnClickListener {
             val intent = Intent(this@MainActivity, NewGame::class.java)
             intent.putExtra("flag", "B") // mengirim nilai flag ke activity 3
@@ -53,6 +55,11 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("flag", "B") // mengirim nilai flag ke activity 2
             startActivity(intent)
         }
-
+        // Klik button  game 3
+        game3.setOnClickListener {
+            val intent = Intent(this@MainActivity, NewGame::class.java)
+            intent.putExtra("flag", "B") // mengirim nilai flag ke activity 3
+            startActivity(intent)
+        }
     }
 }
